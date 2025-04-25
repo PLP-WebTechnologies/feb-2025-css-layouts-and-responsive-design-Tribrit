@@ -1,0 +1,206 @@
+        /* 
+        Base Styles - Starting point for all devices
+      */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Makes padding not affect final width */
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%; /* Prevent images from breaking layout */
+            height: auto;
+        }
+
+        /* 
+        Utility Classes - Reusable styles
+        - */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: transform 0.2s ease; /* Smooth click effect */
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 
+        Header & Navigation 
+        - */
+        /* Sticky header that stays on top */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* 
+        Hero Section - First thing users see
+        - */
+        .hero {
+            background: linear-gradient(45deg, #f0f4ff, #e1e8ff);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+        }
+
+        /* 
+        Services Section - Showcase offerings
+        - */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 
+        Team Section - Introduce members
+        - */
+        .team-section {
+            background: #f8fafc;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* 
+        Responsive Adjustments - Mobile first!
+        - */
+        @media (max-width: 768px) {
+            /* Hamburger menu would be better here, 
+            but we'll stack nav items for simplicity */
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem; /* More readable on mobile */
+            }
+
+            .service-card {
+                padding: 1.5rem; /* Reduce padding on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                width: 100%; /* Full width buttons are easier to tap */
+                text-align: center;
+            }
+
+            .container {
+                width: 95%; /* More breathing room on small screens */
+            }
+        }
+
+        /* 
+        Footer - Contact and legal info
+        - */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #93c5fd;
+        }
